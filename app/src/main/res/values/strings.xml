@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">BusinessCard</string>
+    <string name="label_business_cards">Business Cards</string>
+    <string name="label_name">Name</string>
+    <string name="label_new_card_title">New Card</string>
+    <string name="label_email">Email</string>
+    <string name="label_companyName">Company Name</string>
+    <string name="label_phone">Phone</string>
+    <string name="label_ddd">DDD</string>
+    <string name="label_load_button">Load QR-Code</string>
+    <string name="label_countryCodeHint">+CC</string>
+    <string name="label_button_save">Save</string>
+    <string name="label_background_color">Background Color</string>
+    <string name="label_add_success">Business Card Added</string>
+</resources>
