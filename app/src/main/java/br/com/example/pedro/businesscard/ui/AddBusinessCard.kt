@@ -14,6 +14,7 @@ import br.com.example.pedro.businesscard.App
 import br.com.example.pedro.businesscard.R
 import br.com.example.pedro.businesscard.data.BusinessCard
 import br.com.example.pedro.businesscard.databinding.ActivityAddBusinessCardBinding
+import br.com.example.pedro.businesscard.utils.Verify
 
 class AddBusinessCard : AppCompatActivity() {
 
@@ -74,22 +75,35 @@ class AddBusinessCard : AppCompatActivity() {
             val email:String = emailEdit.text.toString()
             val company:String = companyEdit.text.toString()
 
-            val businessCard:BusinessCard = BusinessCard(
-                0,
+            val list:List<String> = listOf(
                 name,
-                company,
-                email,
                 phoneNumber,
-                backgroundColor)
+                backgroundColor,
+                email,
+                company
+            )
 
-            //Persists data
-            viewModel.insert(businessCard)
+            val verificator:Verify = Verify()
 
-            Toast.makeText(applicationContext, R.string.label_add_success, Toast.LENGTH_LONG).show()
+            if (verificator.isAllNotEmpty(list) && verificator.verifyPhoneNumber(phoneNumber) && verificator.verifyEmail(email)){
+                val businessCard:BusinessCard = BusinessCard(
+                    0,
+                    name,
+                    company,
+                    email,
+                    phoneNumber,
+                    backgroundColor)
 
-            // Kills the current activity
-            finish()
+                //Persists data
+                viewModel.insert(businessCard)
 
+                Toast.makeText(applicationContext, R.string.label_add_success, Toast.LENGTH_LONG).show()
+
+                // Kills the current activity
+                finish()
+            }else{
+                Toast.makeText(applicationContext, R.string.label_add_not_success, Toast.LENGTH_LONG).show()
+            }
         }
     }
 

@@ -12,4 +12,5 @@
     <string name="label_button_save">Save</string>
     <string name="label_background_color">Background Color</string>
     <string name="label_add_success">Business Card Added</string>
+    <string name="label_add_not_success">Verify if all objects are filled correctly</string>
 </resources>

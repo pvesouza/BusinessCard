@@ -42,8 +42,8 @@ class BusinessCardAdapter()
             binding.textviewEmail.text = item.email
             binding.textviewCompany.text = item.company
             binding.textviewPhone.text = item.phone
-            binding.cardContent.setBackgroundColor(Color.parseColor(item.colorBackground))
-            binding.cardContent.setOnClickListener{
+            binding.cardContent2.setBackgroundColor(Color.parseColor(item.colorBackground))
+            binding.cardContent2.setOnClickListener{
                 listenerShare(it)
             }
         }
