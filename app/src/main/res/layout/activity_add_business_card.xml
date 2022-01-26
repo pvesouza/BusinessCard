@@ -117,25 +117,34 @@
         app:layout_constraintTop_toBottomOf="@id/edittext_company_name"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+    <com.google.android.material.imageview.ShapeableImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/imageView_qrCode"
+        app:layout_constraintTop_toBottomOf="@id/edittext_background_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/shape_background"/>
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_load"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:focusable="true"
         android:text="@string/label_load_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edittext_background_color" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView_qrCode" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_save"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:focusable="true"
         android:layout_marginEnd="16dp"
         android:text="@string/label_button_save"

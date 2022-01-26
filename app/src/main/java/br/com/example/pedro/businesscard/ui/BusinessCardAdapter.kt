@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import br.com.example.pedro.businesscard.data.BusinessCard
 import br.com.example.pedro.businesscard.databinding.LayoutItemviewBinding
+import java.io.ByteArrayInputStream
 
 
 class BusinessCardAdapter()
@@ -38,6 +39,7 @@ class BusinessCardAdapter()
     ) : RecyclerView.ViewHolder(binding.root){
 
         fun bind(item:BusinessCard){
+
             binding.textviewName.text = item.name
             binding.textviewEmail.text = item.email
             binding.textviewCompany.text = item.company

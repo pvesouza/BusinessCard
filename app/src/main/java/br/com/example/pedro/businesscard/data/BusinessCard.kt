@@ -1,6 +1,5 @@
 package br.com.example.pedro.businesscard.data
 
-import android.media.Image
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
@@ -12,5 +11,5 @@ data class BusinessCard (
     val email:String,
     val phone:String,
     val colorBackground:String
-        ){
+    ){
 }
