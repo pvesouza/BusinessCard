@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [BusinessCard::class], version = 1)
+@Database(entities = [BusinessCard::class], version = 2)
 abstract class AppDataBase : RoomDatabase() {
 
     abstract fun businessDao() : BusinessCardDao
@@ -19,7 +19,7 @@ abstract class AppDataBase : RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     AppDataBase::class.java,
-                    "businesseCard_db").build()
+                    "businesseCard_db").fallbackToDestructiveMigration().build()
                 INSTANCE = instance
                 instance
             }

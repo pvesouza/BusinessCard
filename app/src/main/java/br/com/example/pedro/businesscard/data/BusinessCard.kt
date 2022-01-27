@@ -1,5 +1,6 @@
 package br.com.example.pedro.businesscard.data
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
@@ -10,6 +11,7 @@ data class BusinessCard (
     val company:String,
     val email:String,
     val phone:String,
-    val colorBackground:String
+    val colorBackground:String,
+    @ColumnInfo(typeAffinity = ColumnInfo.BLOB) val image:ByteArray? = null
     ){
 }

@@ -25,7 +25,6 @@ import br.com.example.pedro.businesscard.data.BusinessCard
 import br.com.example.pedro.businesscard.databinding.ActivityAddBusinessCardBinding
 import br.com.example.pedro.businesscard.utils.Verify
 import com.google.zxing.WriterException
-import java.io.ByteArrayInputStream
 import java.io.ByteArrayOutputStream
 
 class AddBusinessCard : AppCompatActivity() {
@@ -121,10 +120,10 @@ class AddBusinessCard : AppCompatActivity() {
 
             if (verificator.isAllNotEmpty(list) && verificator.verifyPhoneNumber(phoneNumber) && verificator.verifyEmail(email)){
 
-                val qrCodeString = String(this.qrCodeByteArray)
-                val imageInputStrem = ByteArrayInputStream(this.qrCodeByteArray)
-                val bitmap1 = BitmapFactory.decodeStream(imageInputStrem)
-                qrCodeView.setImageBitmap(bitmap1)
+//                val qrCodeString = String(this.qrCodeByteArray)
+//                val imageInputStrem = ByteArrayInputStream(this.qrCodeByteArray)
+//                val bitmap1 = BitmapFactory.decodeStream(imageInputStrem)
+//                qrCodeView.setImageBitmap(bitmap1)
 
                 val businessCard = BusinessCard(
                     0,
@@ -132,15 +131,16 @@ class AddBusinessCard : AppCompatActivity() {
                     company,
                     email,
                     phoneNumber,
-                    backgroundColor)
+                    backgroundColor,
+                    this.qrCodeByteArray)
 
                 //Persists data
-                //viewModel.insert(businessCard)
+                viewModel.insert(businessCard)
 
                 Toast.makeText(applicationContext, R.string.label_add_success, Toast.LENGTH_LONG).show()
 
                 // Kills the current activity
-                //finish()
+                finish()
             }else{
                 Toast.makeText(applicationContext, R.string.label_add_not_success, Toast.LENGTH_LONG).show()
             }
