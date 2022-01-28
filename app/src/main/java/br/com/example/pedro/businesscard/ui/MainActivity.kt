@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import br.com.example.pedro.businesscard.App
 import br.com.example.pedro.businesscard.databinding.ActivityMainBinding
+import br.com.example.pedro.businesscard.utils.Image
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {
@@ -31,6 +32,10 @@ class MainActivity : AppCompatActivity() {
         addButton.setOnClickListener{
             val intent: Intent = Intent(this@MainActivity, AddBusinessCard::class.java)
             startActivity(intent)
+        }
+
+        adapter.listenerShare = { card->
+            Image.share(this@MainActivity, card)
         }
     }
 

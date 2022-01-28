@@ -13,4 +13,6 @@
     <string name="label_background_color">Background Color</string>
     <string name="label_add_success">Business Card Added</string>
     <string name="label_add_not_success">Verify if all objects are filled correctly</string>
+    <string name="label_cardSaved">Card Saved</string>
+    <string name="label_share">Share</string>
 </resources>
